@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-     MaterialApp(
-       debugShowCheckedModeBanner: false,
-      home: Scaffold( 
-        backgroundColor: Colors.blue,
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey,
         appBar: AppBar(
-          title: const Text('I Am Rich'),
+          title: const Center(child: Text('I Am Richs')),
           backgroundColor: Colors.blueGrey[900],
         ),
-        body: Center(
-          child: Image(
-            image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg')
-          ),
-        )
+        body: const Center(
+          child: Image(image: AssetImage('images/diamond.png')),
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
